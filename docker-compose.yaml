@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  image:
+    build: .
+    #image: steancnd/steamcmd:latest
+    #command: "steamcmd-wrapper ./rocketstation_DedicatedServer.x86_64 -LOAD Moon1 moon -settings ServerVisible true GamePort 27016 UpdatePort 27015 AutoSave true SaveInterval 300"
+    #environment:
+    #  STEAMCMD_APP_ID: "600760"
+    #  STEAMCMD_SKIP: "true"
+    #  USER_UID: "1000"
+    #  USER_GID: "1000"
+    ports:
+      - "27016:27016"
+      - "27015:27015"
+    volumes:
+      - "./data:/data"
